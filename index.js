@@ -18,36 +18,41 @@ clientFour.login(process.env.TokenFour);
 
 
 
+ function main() {
 
-const main = async () => {
-
-  var interval = setInterval (function () {
+  setInterval (function () {
 
   clientOne.on('ready', async () => {
   console.log(`Logged in as ${clientOne.user.tag}!`);
-  const BotData = ['755175493782994974', '774851343776874526', '775426005149548554', '775426394586742794', 'BTC-USD']
-  operations.process(clientOne, BotData[0], BotData[1], BotData[2], BotData[3], BotData[4])
+  const BotData = ['774851343776874526', 'BTC-USD']
+  operations.process(clientOne, process.env.ServerID, process.env.DroleID, process.env.IroleID, BotData[0], BotData[1])
 });
 
-clientTwo.on('ready', async () => {
+
+  clientTwo.on('ready', async () => {
   console.log(`Logged in as ${clientTwo.user.tag}!`);
-  const BotData = ['755175493782994974', '775415827583336499', '775426005149548554', '775426394586742794', 'ETH-USD']
-  operations.process(clientTwo, BotData[0], BotData[1], BotData[2], BotData[3], BotData[4])
+  const BotData = ['775415827583336499', 'ETH-USD']
+  operations.process(clientTwo, process.env.ServerID, process.env.DroleID, process.env.IroleID, BotData[0], BotData[1])
 });
 
-clientThree.on('ready', async () => {
+  clientThree.on('ready', async () => {
   console.log(`Logged in as ${clientThree.user.tag}!`);
-  const BotData = ['755175493782994974', '775443907781722113', '775426005149548554', '775426394586742794', 'LTC-USD']
-  operations.process(clientThree, BotData[0], BotData[1], BotData[2], BotData[3], BotData[4])
+  const BotData = ['775443907781722113', 'LTC-USD']
+  operations.process(clientThree, process.env.ServerID, process.env.DroleID, process.env.IroleID, BotData[0], BotData[1])
 });
 
-clientFour.on('ready', async () => {
+  clientFour.on('ready', async () => {
   console.log(`Logged in as ${clientFour.user.tag}!`);
-  const BotData = ['755175493782994974', '775452566489661461', '775426005149548554', '775426394586742794', 'XRP-USD']
-  operations.process(clientFour, BotData[0], BotData[1], BotData[2], BotData[3], BotData[4])
+  const BotData = ['775452566489661461', 'XRP-USD']
+  operations.process(clientFour, process.env.ServerID, process.env.DroleID, process.env.IroleID, BotData[0], BotData[1])
 });
 
-}, 30000);
+}, 5 * 60000);
+
 }
 
+
+
 main()
+
+

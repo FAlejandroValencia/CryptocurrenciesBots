@@ -1,8 +1,8 @@
 const axios = require('axios');
 
-const process = async (client, ServerID, BotID, DroleID, IroleID, CRIPTO_REF) => {
+const process = async (client, ServerID, DroleID, IroleID, BotID, CRIPTO_REF) => {
 
-	let date = new Date();
+	  let date = new Date();
     let day = date.getDate()
     let dayPrevious = date.getDate() - 1
     let month = date.getMonth() + 1
